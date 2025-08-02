@@ -12,8 +12,8 @@ phases:
       - echo "Building application"
       - npm run build
   post_build:
-    Commands:
-      - echo "Build Completed on 'date'"
+    commands:
+      - echo "Build Completed on '$(date)'"
       - mkdir -p deploy
       - cp appspecs.yaml deploy/
       - cp -r script/ deploy/scripts/
