@@ -1,4 +1,4 @@
-version: 0.1
+version: 0.2
 
 phases:
   install:
@@ -20,5 +20,5 @@ phases:
 artifacts:
   files:
     - deploy/**/*
-    discard-paths: no
+  discard-paths: no
 
