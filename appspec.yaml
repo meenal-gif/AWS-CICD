@@ -6,15 +6,15 @@ files:
     destination: /home/ec2-user/nodeapp
 
 hooks:
-  Before Install:
+  BeforeInstall:
     -location: scripts/BeforeInstall.sh
       timeout: 60
       runas: ec2-user
-  Ater Install:
+  AterInstall:
       -location: scripts/AfterInstall.sh
       timeout: 60
       runas: ec2-user
   ApplicationStart:
-  -location: scripts/ApplicationStart.sh
+  - location: scripts/ApplicationStart.sh
       timeout: 60
       runas: ec2-user
