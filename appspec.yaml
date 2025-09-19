@@ -1,20 +1,42 @@
-version:0.0
-
-os: linux
-files:
-  - source: /
-    destination: /home/ec2-user/nodeapp
-
-hooks:
-  BeforeInstall:
-    -location: scripts/BeforeInstall.sh
-      timeout: 60
-      runas: ec2-user
-  AterInstall:
-      -location: scripts/AfterInstall.sh
-      timeout: 60
-      runas: ec2-user
-  ApplicationStart:
-  - location: scripts/ApplicationStart.sh
-      timeout: 60
-      runas: ec2-user
+#include<iostream>
+#include<string>
+using namespace std;
+class student {
+public :
+	string name ;
+	float standard;
+	char div;
+	int rollno;
+	float percentage ;
+	void setinfo(string a,int b,char c,int d,float e){
+		this->name=a;
+		this->standard=b;
+		this->div=c;
+		this->rollno=d;
+		this->percentage=e;
+	}
+	student(const student &orgobj){
+		cout<<"im chutya"<<endl;
+		this->name=orgobj.name;
+		this->standard=orgobj.standard;
+		this->div=orgobj.div;
+		this->rollno=orgobj.rollno;
+		this->percentage=orgobj.percentage;
+	}
+	void getinfo(){
+		cout<<"name : "<<name<<endl;
+		cout<<"standard : "<<standard<<endl;
+		cout<<"div : "<<div<<endl;
+		cout<<"rollno : "<<rollno<<endl;
+		cout<<"percentage : "<<percentage<<endl;
+	}
+};
+int main()
+{
+	
+	student s1;
+	s1.setinfo("vaibhav" , 6 , 'A' , 42 , 97 );
+	
+	student s2(s1);
+	s2.getinfo();
+}

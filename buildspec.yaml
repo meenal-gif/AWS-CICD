@@ -17,7 +17,7 @@ phases:
       - mkdir -p deploy
       - cp -r dist/* deploy/
       - cp appspecs.yaml deploy/
-      - cp -r script/ deploy/scripts/
+      - cp -r script/ deploy/scripts
 artifacts:
   files:
     - deploy/**/*
